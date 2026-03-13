@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="add.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+
+  <header>
+    <div class="logo">FurnitureCo</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="categorypage.html">Category</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+    <div class="search-bar">
+      <input type="text" placeholder="Search...">
+      <button type="submit">go</button>
+    </div>
+    <div class="cart-icons">
+      <button class="profile-button"> 
+         <a href="ad.html"><i class="material-icons">🛒</i></a> 
+      </button>
+      <div class="profile-container">
+        <!-- Profile icon (could be an icon or user image) -->
+        <button class="profile-button"><i class="material-icons">person</i></button>
+        
+        <!-- Dropdown menu -->
+        <div class="dropdown-menu">
+          <a href="Profile.html">Profile</a>
+          <a href="login.html">Login</a>
+          <a href="signin.html">Signup</a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+    <div class="cart-container">
+        <h2>My Cart</h2>
+
+        <!-- Product List Section -->
+        <div class="cart-items">
+            <div class="cart-item">
+                <img src="/images/sofa2list.webp" alt="Product 1">
+                <div class="item-details">
+                    <h3>Sofa</h3>
+                    <p>Price: $20.00</p>
+                    <label>Quantity:
+                        <input type="number" min="1" value="1">
+                    </label>
+                </div>
+                <div class="item-total">
+                    <p>Total: $20.00</p>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <img src="/images/sofa1list.webp" alt="Product 2">
+                <div class="item-details">
+                    <h3>Product 2</h3>
+                    <p>Price: $15.00</p>
+                    <label>Quantity:
+                        <input type="number" min="1" value="1">
+                    </label>
+                </div>
+                <div class="item-total">
+                    <p>Total: $15.00</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coupon Section -->
+        <div class="coupon">
+            <label><p>Coupon Code:</p>
+                <input type="text" placeholder="Enter coupon code">
+            </label>
+            <button>Apply Coupon</button>
+        </div>
+
+        <!-- Price Details Section -->
+        <div class="price-details">
+            <h2>Price Details</h2>
+            <div class="price-row">
+                <p>Subtotal</p>
+                <p>$35.00</p>
+            </div>
+            <div class="price-row">
+                <p>Discount</p>
+                <p>-$5.00</p>
+            </div>
+            <div class="price-row">
+                <p>Delivery Charges</p>
+                <p>$3.00</p>
+            </div>
+            <div class="price-row total">
+                <h3>Total</h3>
+                <h3>$33.00</h3>
+            </div>
+        </div>
+
+        <!-- Continue Button -->
+        <button class="continue-btn">Continue</button>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <p>Your destination for high-quality, stylish furniture. Visit our showroom or explore our online store to find your perfect piece.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/products">Our Products</a></li>
+                    <li><a href="/store-locator">Store Locator</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: info@furniturestore.com</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Address: 1234 Furniture St., Design City</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Furniture Store. All rights reserved.</p>
+        </div>
+        </footer>
+
+</body>
+</html>

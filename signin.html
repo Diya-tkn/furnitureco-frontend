@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #fffffff0; /* White background for header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    position: sticky;
+    top:0px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333; /* Charcoal Black */
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin: 0 15px; /* Space between menu items */
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333333; /* Charcoal Black */
+    font-weight: 500;
+    transition: color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  nav ul li a:hover {
+    color: #FF7043; /* Burnt Orange for hover effect */
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar input {
+    padding: 10px;
+    border: 1px solid #E0E0E0; /* Soft border */
+    border-radius: 5px;
+    margin-right: 10px; /* Space between input and button */
+  }
+  
+  .search-bar button {
+    background-color: #FF7043; /* Burnt Orange */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover */
+  }
+  
+  .search-bar button:hover {
+    background-color: #D84315; /* Darker shade for hover */
+  }
+  .cart-icon a {
+    text-decoration: none;
+    color: #333333; /* Charcoal Black */
+    font-weight: bold;
+    font-size: 30px;
+  }
+  header nav a.active,
+ header nav a:hover {
+    color: #ff7a00;
+}
+
+.profile-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-button {
+  /* background-color: #333; */
+  /* color: white; */
+  padding:  4px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 4px;
+  border-color: transparent;
+}
+
+
+.profile-button:hover{
+  background-color:#e1dfdf;
+}
+
+.dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.dropdown-menu a {
+  color: #333;
+  padding: 12px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show dropdown on hover */
+.profile-container:hover .dropdown-menu {
+  display: block;
+}
+
+
+         /* Modal Overlay */
+         .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        /* Body Style */
+        body {
+            font-family: Arial, sans-serif;
+           
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .main{
+            display: flex;
+            flex-direction: row;
+            width: 70%;
+            height: 550px;
+
+        }
+        .img{
+            width: 100%;
+            /* border-radius: 8px; */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        }
+
+        /* Container */
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            width: 100%;
+            max-width: 450px;
+            /* border-radius: 8px; */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            position: relative;
+        }
+
+        /* Heading */
+        .login-container h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            /* margin-bottom: 20px; */
+        }
+
+
+        /* Form Styles */
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"],.login-container input[type="email"] {
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        .login-container input[type="submit"] {
+            background-color:#D84315;
+            color: white;
+            padding: 12px;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background-color: #333;
+        }
+
+        /* Link */
+        .login-container p {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .login-container a {
+            color: #D84315;
+            text-decoration: none;
+        }
+        .login-container a:hover{
+            color: #842103;
+        }
+
+        .alt-login{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+
+        }
+
+        .alt-login button {
+        border: 1px solid #333;
+        /* margin-top: 1rem; */
+        height: 55x;
+        width: 15%;
+        border-radius: 10px;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        /* padding: 6px; */
+
+       }
+       
+       .or {
+      display: flex;
+      align-items: center;
+      color: #aaa;
+      font-size: 12px;
+      margin: 1.5rem 0;
+    }
+    .or::before, .or::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background-color: #ddd;
+    }
+       button{
+        color: #333;
+        align-items: center;
+        padding: 4px;
+       }
+      
+       button:hover{
+        background-color: #555;
+       } 
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 15px;
+            }
+
+            .login-container h2 {
+                font-size: 1.5em;
+            }
+        }
+        /* Responsive Design */
+@media (min-width: 768px) {
+  .footer-content {
+      flex-direction: row;
+      text-align: left;
+  }
+}
+
+@media (max-width: 800px) {
+  nav ul {
+      display: none;
+  }
+}
+@media (max-width: 600px) {
+  .cart-icons {
+      display: none;
+  }
+}
+@media (max-width: 700px) {
+  .img {
+      display: none;
+  }
+}
+@media (max-width: 1200px) {
+  .main {
+     width: 80%;
+  }
+}
+@media (max-width: 1000px) {
+  .main {
+     width: 90%;
+  }
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">FurnitureCo</div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="categorypage.html">Category</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </nav>
+        <div class="search-bar">
+          <input type="text" placeholder="Search...">
+          <button type="submit">go</button>
+        </div>
+        <div class="cart-icons">
+          <button class="profile-button"> 
+             <a href="ad.html"><i class="material-icons">🛒</i></a> 
+          </button>
+          <div class="profile-container">
+            <!-- Profile icon (could be an icon or user image) -->
+            <button class="profile-button"><i class="material-icons">person</i></button>
+            
+            <!-- Dropdown menu -->
+            <div class="dropdown-menu">
+              <a href="Profile.html">Profile</a>
+              <a href="login.html">Login</a>
+              <a href="signin.html">Signup</a>
+            </div>
+          </div>
+    
+        </div>
+      </header>
+
+    <div class="modal-overlay" id="loginModal">
+    <div class="main">
+        <div class="img">
+            <img src="/images/HP_60-70.png" height="550" width="100%">
+        </div>
+
+        <div class="login-container" id="loginBox">
+
+         <h2>Sign up</h2>
+         <form action="#" method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email or Mobile Number" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="password" placeholder="Conform Passwod" required>
+            <input type="submit" value="Sign Up">
+         </form>
+         <div class="or">OR</div>
+            <div class="alt-login">
+              <button><img src="/images/facebook.png" height="30px"></button>
+              <button><img src="/images/google (1).png" height="30px"></button>
+            </div>
+         <p>Have account? <a href="login.html">Log in</a></p>
+         </div>
+        </div>
+
+    </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
+

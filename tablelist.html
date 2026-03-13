@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofa Listings</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+      header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #fffffff0; /* White background for header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    position: sticky;
+    top:0px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333; /* Charcoal Black */
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin: 0 15px; /* Space between menu items */
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333333; /* Charcoal Black */
+    font-weight: 500;
+    transition: color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  nav ul li a:hover {
+    color: #FF7043; /* Burnt Orange for hover effect */
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar input {
+    padding: 10px;
+    border: 1px solid #E0E0E0; /* Soft border */
+    border-radius: 5px;
+    margin-right: 10px; /* Space between input and button */
+  }
+  
+  .search-bar button {
+    background-color: #FF7043; /* Burnt Orange */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover */
+  }
+  
+  .search-bar button:hover {
+    background-color: #D84315; /* Darker shade for hover */
+  }
+  .cart-icon a {
+    text-decoration: none;
+    color: #333333; /* Charcoal Black */
+    font-weight: bold;
+    font-size: 30px;
+  }
+  header nav a.active,
+ header nav a:hover {
+    color: #ff7a00;
+}
+
+.profile-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-button {
+  /* background-color: #333; */
+  /* color: white; */
+  padding:  4px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 4px;
+  border-color: transparent;
+}
+
+
+.profile-button:hover{
+  background-color:#e1dfdf;
+}
+
+.dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.dropdown-menu a {
+  color: #333;
+  padding: 12px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show dropdown on hover */
+.profile-container:hover .dropdown-menu {
+  display: block;
+}
+
+        /* General container styling */
+        .body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            height: 600px;
+        }
+        
+        /* Row for sofa items */
+        .row {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        
+        /* Column styling for individual items */
+        .column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            border-radius: 10px;
+            width: 25%;
+            height: 370px;
+            padding: 4px;
+            cursor:pointer;
+        }
+
+        .column:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+        .column-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Keep text color unchanged */
+    display: inline-block; /* Ensures the link wraps around the column without affecting layout */
+    width: 100%;
+}
+
+
+        
+        /* Image container */
+        .img-container {
+            border-radius: 10px;
+            width: 100%;
+            height: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(/images/table.webp);
+            background-size: cover;
+            background-position: center;
+            /* background-size: contai; */
+            /* padding-bottom: 10px; */
+        }
+
+        
+        /* Details styling */
+        .details {
+            display: flex;
+            flex-direction: column;
+            padding: 4px;
+            color: #333;
+        }
+        
+        /* Price and offer styling */
+        .price-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            height: 8px;
+        }
+        
+        .price {
+            font-weight: 600;
+            font-size: 25px;
+        }
+        
+        .offer {
+            color: orangered;
+            font-size: 20px;
+        }
+        
+        /* Text styling */
+        .title {
+            font-size: 23px;
+            font-weight: 400;
+            height: 0px;
+        }
+        
+        .subtitle {
+            color: #7D7D7D;
+            height: 0px;
+        }
+        
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer {
+  background-color: #333;
+  color: #f0f0f0;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-content > div {
+  flex: 1;
+}
+
+.footer-about, .footer-links, .footer-contact {
+  text-align: left;
+}
+
+.footer h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer p, .footer ul {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.footer-links ul {
+  list-style-type: none;
+}
+
+.footer-links ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links ul li a {
+  color: #ff7043;
+  text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 2rem;
+}  
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .footer-content {
+      flex-direction: row;
+      text-align: left;
+  }
+}
+
+@media (max-width: 800px) {
+  nav ul {
+      display: none;
+  }
+}
+@media (max-width: 600px) {
+  .cart-icons {
+      display: none;
+  }
+}
+@media (max-width: 1200px) {
+  .column {
+      width: 35%;
+  }
+}
+@media (max-width: 800px) {
+  .column {
+      width:40%;
+  }
+}
+@media (max-width: 650px) {
+  .column {
+    width: 45%;
+  }
+}
+@media (max-width: 550px) {
+  .column {
+    width: 45%;
+    height: 300px;
+  }
+  .img-container{
+    height: 150px;
+  }
+}
+    </style>
+</head>
+<body>
+  <header>
+    <div class="logo">FurnitureCo</div>
+    <nav>
+      <ul>
+        <li><a href="index.html" >Home</a></li>
+        <li><a href="categorypage.html"class="active">Category</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+    <div class="search-bar">
+      <input type="text" placeholder="Search...">
+      <button type="submit">go</button>
+    </div>
+    <div class="cart-icons">
+      <button class="profile-button"> 
+         <a href="ad.html"><i class="material-icons">🛒</i></a> 
+      </button>
+      <div class="profile-container">
+        <!-- Profile icon (could be an icon or user image) -->
+        <button class="profile-button"><i class="material-icons">person</i></button>
+        
+        <!-- Dropdown menu -->
+        <div class="dropdown-menu">
+          <a href="Profile.html">Profile</a>
+          <a href="login.html">Login</a>
+          <a href="signin.html">Signup</a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+    <!-- <h2>Sofas</h2> -->
+    
+    <div class="body">
+        <!-- First Sofa Item -->
+        <div class="row">
+         
+            <div class="column">
+               <a href="tabledetail1.html" class="column-link">
+                <div class="img-container"></div>
+                <div class="details">
+                    <p class="title">Study Table</p>
+                    <p class="subtitle">Spacious, durable, student-friendly table</p>
+                    <div class="rating">
+                        <p>4</p>
+                        <i class="material-icons" style="font-size:20px; color:gold;">star</i>
+                    </div>
+                    <div class="price-container">
+                        <p class="price">$1000</p>
+                        <p class="offer">(40% off)</p>
+                    </div>
+                </div> 
+              </a>
+            </div> 
+               
+
+            <!-- Second Sofa Item -->
+            <div class="column">
+              <a href="tabledetail2.html" class="column-link">
+                <div class="img-container" style="background-image: url('/images/table2.webp');"></div>
+                <div class="details">
+                    <p class="title">Wooden Table</p>
+                    <p class="subtitle">Sturdy, classic, natural finish</p>
+                    <div class="rating">
+                        <p>4.5</p>
+                        <i class="material-icons" style="font-size:20px; color:gold;">star</i>
+                    </div>
+                    <div class="price-container">
+                        <p class="price">$ 1200</p>
+                        <p class="offer">(40% off)</p>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <p>Your destination for high-quality, stylish furniture. Visit our showroom or explore our online store to find your perfect piece.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/products">Our Products</a></li>
+                    <li><a href="/store-locator">Store Locator</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: info@furniturestore.com</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Address: 1234 Furniture St., Design City</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Furniture Store. All rights reserved.</p>
+        </div>
+        </footer>
+</body>
+</html>

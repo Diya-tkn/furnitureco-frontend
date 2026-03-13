@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture website</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="home.css">
+    <style>
+        /* Cart icon wrapper for badge positioning */
+        .cart-icon-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Cart count badge */
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            background: #e74c3c;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Pop animation for badge */
+        @keyframes popBadge {
+            0%   { transform: scale(1); }
+            40%  { transform: scale(1.6); }
+            70%  { transform: scale(0.85); }
+            100% { transform: scale(1); }
+        }
+
+        .cart-badge.pop {
+            animation: popBadge 0.4s ease forwards;
+        }
+    </style>
+</head>
+<body>
+        <header>
+            <div class="logo">FurnitureCo</div>
+            <nav>
+              <ul>
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="categorypage.html">Category</a></li>
+                <li><a href="about.html">About Us</a></li>
+              </ul>
+            </nav>
+            <div class="search-bar">
+              <input type="text" placeholder="Search...">
+              <button type="submit">go</button>
+            </div>
+            <div class="cart-icons">
+              <button class="profile-button"> 
+                 <a href="ad.html"><i class="material-icons">🛒</i></a> 
+              </button>
+              <div class="profile-container">
+                <!-- Profile icon (could be an icon or user image) -->
+                <button class="profile-button"><i class="material-icons">person</i></button>
+                
+                <!-- Dropdown menu -->
+                <div class="dropdown-menu">
+                  <a href="Profile.html">Profile</a>
+                  <a href="login.html">Login</a>
+                  <a href="signin.html">Signup</a>
+                </div>
+              </div>
+
+            </div>
+          </header>
+
+          <section class="hero">
+           
+              <div class="hero-content">
+                <h1>Discover Comfortable & Stylish Furniture</h1>
+                <p>Bring elegance and comfort to your home with our carefully curated selection of furniture.</p>
+               <a href="categorypage.html" class="cta-btn">Shop Now</a>
+             </div>
+            
+          </section>
+          <div class="top-notch-policies">
+              <h2>Top Notch Policies</h2>
+              <div class="policy-grid">
+                <div class="policy-card">
+                  <img src="/images/customer.png"  alt="Free Shipping">
+                  <!-- <h3>Free Shipping</h3> -->
+                  <p>3 million customers</p>
+                </div>
+                <div class="policy-card">
+                  <img src="/images/shield.png" alt="24/7 Support">
+                  <!-- <h3>24/7 Support</h3> -->
+                  <p>Unmatched 5 year warrenty</p>
+                </div>
+                <div class="policy-card">
+                  <img src="/images/talent-management.png" alt="24/7 Support">
+                  <!-- <h3>24/7 Support</h3> -->
+                  <p>4 decade experiences</p>
+                </div>
+                <div class="policy-card">
+                  <img src="/images/discount.png" alt="24/7 Support">
+                  <!-- <h3>24/7 Support</h3> -->
+                  <p>EMI's on furniture</p>
+                </div>
+              </div>
+            </div>
+
+          </section>
+
+
+          <div class="featured-products">
+            <h2>Best Selling Products</h2>
+            <div class="product-grid">
+              <div class="product-card">
+                <a href="sofadetail1.html" class="under">
+                  <img src="/images/sofa1list.webp" alt="Sofa">
+                 <h3>Elegant Sofa</h3>
+                 <p>$899.00</p>
+                </a>
+              </div>
+              <div class="product-card">
+                <a href="decor1.html" class="under">
+                <img src="/images/wallshelf.webp" alt="Dining Table">
+                <h3>Wooden Dining Table</h3>
+                <p>$499.00</p>
+                </a>
+              </div>
+              <div class="product-card">
+                <a href="tabledetail2.html" class="under">
+                <img src="/images/table2.webp" alt="Armchair">
+                <h3>Fancy Wooden Table</h3>
+                <p>$299.00</p>
+                </a>
+              </div>
+              <div class="product-card">
+                <a href="beddetail2.html" class="under">
+                <img src="/images/bed2.webp" alt="Armchair">
+                <h3>Comfy Bed</h3>
+                <p>$299.00</p>
+                </a>
+              </div>
+              <div class="product-card">
+                <a href="sofadetail2.html" class="under">
+                <img src="/images/sofa2list.webp" alt="Armchair">
+                <h3>Elegant Sofa</h3>
+                <p>$299.00</p>
+                </a>
+              </div>
+              <div class="product-card">
+                <a href="tabledetail1.html" class="under">
+                <img src="/images/table3.webp" alt="Armchair">
+                <h3>Study Table</h3>
+                <p>$299.00</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+    <!-- Cart Icon Animation (wrapped for badge positioning) -->
+    <div class="cart-icon-wrapper">
+        <i class="material-icons cart-icon" id="cartIcon">shopping_cart</i>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">Item added to cart!</div>
+   
+
+          <div class="shop-latest">
+            <h2>Shop the Latest Arrivals</h2>
+            <div class="scroll-container">
+             <div class="latest-items">
+                <div class="item">
+                    <a href="beddetail1.html" class="under">
+                      <img src="/images/bed2.webp"  alt="Latest Sofa"></a>
+                    <h3>Comfy Bed</h3>
+                    <p>$899</p>
+                    <a class="add-to-cart-btn" onclick="addToCart()" >Add to Cart</a>
+                </div>
+                <div class="item">
+                  <a href="decor2.html" class="under">
+                    <img src="/images/decor.webp" alt="Stylish Coffee Table"></a>
+                    <h3>Aesthetic Pot</h3>
+                    <p>$299</p>
+                    <a class="add-to-cart-btn" onclick="addToCart()" >Add to Cart</a>
+                </div>
+                <div class="item">
+                  <a href="decor1.html" class="under">
+                    <img src="/images/photoframe.webp" alt="Elegant Dining Chair"></a>
+                    <h3>Photo Frames</h3>
+                    <p>$149</p>
+                    <a class="add-to-cart-btn" onclick="addToCart()" >Add to Cart</a>
+                </div> 
+                <div class="item">
+                  <a href="tabledetail1.html" class="under">
+                    <img src="/images/cattable.webp" alt="Contemporary Bed"></a>
+                    <h3>Study Table</h3>
+                    <p>$999</p>
+                    <a class="add-to-cart-btn" onclick="addToCart()" >Add to Cart</a>
+                </div>
+                <div class="item active">
+                  <img src="/images/bed2.webp" alt="Latest Sofa">
+                  <h3>Comfy Bed</h3>
+                  <p>$899</p>
+                  <a class="add-to-cart-btn" onclick="addToCart()" >Add to Cart</a>
+              </div>
+              <div class="item">
+                  <img src="/images/decor.webp" alt="Stylish Coffee Table">
+                  <h3>Aesthetic Pot</h3>
+                  <p>$299</p>
+                  <a class="add-to-cart-btn" onclick="addToCart()" >Add to Cart</a>
+              </div>
+              <div class="item">
+                  <img src="/images/photoframe.webp" alt="Elegant Dining Chair">
+                  <h3>Photo Frames</h3>
+                  <p>$149</p>
+                  <a class="add-to-cart-btn" onclick="addToCart()" >Add to Cart</a>
+              </div>
+              <div class="item">
+                  <img src="/images/cattable.webp" alt="Contemporary Bed">
+                  <h3>Study Table</h3>
+                  <p>$999</p>
+                  <a class="add-to-cart-btn" onclick="addToCart()" >Add to Cart</a>
+              </div>
+          </div>
+        </div>
+
+            <div class="navigation">
+                <button class="arrow left" id="prev">❮</button>
+                <button class="arrow right" id="next">❯</button>
+            </div>
+          </div>
+
+
+          <div class="visit-store">
+            <h2>Visit Our Furniture Showroom</h2>
+            <div class="content">
+              <div class="contentimg">
+                <img src="/images/home_page_store.webp" height="450px" width="100%">
+              </div>
+              <div class="contentabout">
+                <p>Discover our exclusive furniture collection and experience the quality in person. Our expert staff is ready to help you design the home of your dreams.</p>
+                <a href="about.html" class="btn">Visit Us Today</a>
+              </div>
+            </div>
+          </div>
+    
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>About Us</h3>
+                    <p>Your destination for high-quality, stylish furniture. Visit our showroom or explore our online store to find your perfect piece.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/products">Our Products</a></li>
+                        <li><a href="/store-locator">Store Locator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@furniturestore.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Address: 1234 Furniture St., Design City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Furniture Store. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <!-- External JS -->
+        <script src="script.js"></script>
+
+</body>
+</html>

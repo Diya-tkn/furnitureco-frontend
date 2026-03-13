@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail Page</title>
+    <link rel="stylesheet" href="bed.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <header>
+        <div class="logo">FurnitureCo</div>
+        <nav>
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="categorypage.html">Category</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </nav>
+        <div class="search-bar">
+          <input type="text" placeholder="Search...">
+          <button type="submit">go</button>
+        </div>
+        <div class="cart-icons">
+          <button class="profile-button"> 
+             <a href="ad.html"><i class="material-icons">🛒</i></a> 
+          </button>
+          <div class="profile-container">
+            <!-- Profile icon (could be an icon or user image) -->
+            <button class="profile-button"><i class="material-icons">person</i></button>
+            
+            <!-- Dropdown menu -->
+            <div class="dropdown-menu">
+              <a href="Profile.html">Profile</a>
+              <a href="login.html">Login</a>
+              <a href="signin.html">Signup</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+
+    <div class="container">
+        <div class="product-content">
+            <div class="left">
+            <div class="product-image"></div>
+             <div class="smallimg">
+              <div class="img1">
+                <img src="/images/bed3small.webp" height="100px" width="150px">
+              </div>
+              <div class="img2">
+                <img src="/images/bed3small2.webp" height="100px" width="150px">
+              </div>
+             </div>    
+            </div>
+            <!-- Product Details -->
+        <div class="right">
+            <div class="product-details">
+                <h1 class="product-title">Patrick Bed</h1>
+                <p class="product-description">A modern and elegant wooden bed designed for maximum comfort and durability, perfect for enhancing any bedroom space.</p>
+                <div class="price"><p>$1000 </p><p class="strike"><s>$1200</s><span class="offer">(40% off)</span></p></div>
+
+                <!-- Rating -->
+                <div class="rating">
+                    <i class="material-icons">star</i>
+                    <i class="material-icons">star</i>
+                    <i class="material-icons">star</i>
+                    <i class="material-icons">star</i>
+                    <i class="material-icons">star_border</i>
+                    <span>(120 Reviews)</span>
+                </div>
+
+                <!-- Options -->
+                <div class="options">
+                    <div class="size-option">
+                        <p>Select Size:</p>
+                        <a><label for="S">S</label>
+                        <input type="radio" id="S" name="S" value="30">
+                        <label for="M">M</label>
+                        <input type="radio" id="M" name="M" value="30">
+                        <label for="L">L</label>
+                        <input type="radio" id="L" name="L" value="30">
+                        </a>
+                    </div>
+
+                    <div class="color-option">
+                        <p>Select Colour:</p>
+                        <div class="colour">
+                            <div class="c1"></div>
+                            <div class="c2"></div>
+                            <div class="c3"></div>
+                        </div>
+                    </div>
+
+                    <div class="quantity">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" value="1" min="1" max="10">
+                    </div>
+                </div>
+
+               
+
+                <div class="pincode">
+                    <input type="pincode" placeholder="Enter Pincode">
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="actions">
+                    <a href="ad.html" class="buy-now"><p>ADD TO CART</p></a>
+                </div>
+
+                 <div class="emi">
+                    <p>EMI Plans Start's from</p><p class="emi1">$10</p><p class="view"><u>View Plans</u></p>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+        <!-- Additional Info -->
+        <div class="additional-info">
+            <h3>Additional Information</h3>
+            <p>Dimensions: 80 x 35 x 30 inches</p>
+            <p>Material: Fabric and Wood</p>
+            <p>Shipping: Free shipping on orders over $500</p>
+            <p>Return Policy: 30-day return policy</p>
+
+            <!-- FAQs -->
+            <div class="faqs">
+                <h3>FAQs</h3>
+                <div class="faq">
+                    <p class="faq-question">Q: Is the sofa fabric washable?</p>
+                    <p class="faq-answer">A: Yes, the fabric is washable and easy to clean.</p>
+                </div>
+                <div class="faq">
+                    <p class="faq-question">Q: Can the sofa be customized?</p>
+                    <p class="faq-answer">A: Yes, customization options are available upon request.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="related-products">
+            <div class="related-product">
+                <img src="/images/sofa1.webp" alt="Related Product 1">
+                <h4>Modern Chair</h4>
+                <p>$1000</p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <p>Your destination for high-quality, stylish furniture. Visit our showroom or explore our online store to find your perfect piece.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/products">Our Products</a></li>
+                    <li><a href="/store-locator">Store Locator</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: info@furniturestore.com</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Address: 1234 Furniture St., Design City</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Furniture Store. All rights reserved.</p>
+        </div>
+        </footer>
+</body>
+</html>
